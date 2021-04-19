@@ -85,7 +85,7 @@
                 const data = await response.json();
                 if (response.ok && data.length > 0) {
                     random_quote = data[Math.floor(Math.random() * data.length - 1) + 1];
-                    quote_text.innerText = random_quote.content;
+                    quote_text.innerHTML = random_quote.content.replace(/\n/g,"<br>");
                     cite.textContent = random_quote.author;
                 } else {
                     quote_text.textContent = "An error occured";
